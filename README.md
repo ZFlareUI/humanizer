@@ -402,6 +402,64 @@ CMD ["npm", "run", "preview"]
 - **Memory Usage**: Minimal footprint
 - **Privacy**: 100% local processing, no data transmission
 
+## Authentication Setup
+
+This application includes Google OAuth authentication powered by Supabase. Follow these steps to set up authentication:
+
+### 1. Create a Supabase Project
+
+1. Go to [supabase.com](https://supabase.com) and create a free account
+2. Create a new project
+3. Wait for the project to be fully initialized
+
+### 2. Configure Google OAuth
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Enable the Google+ API
+4. Go to "Credentials" → "Create Credentials" → "OAuth 2.0 Client IDs"
+5. Set application type to "Web application"
+6. Add authorized redirect URIs:
+   - For development: `http://localhost:5173/auth/callback`
+   - For production: `https://yourdomain.com/auth/callback`
+7. Copy the Client ID
+
+### 3. Configure Supabase Authentication
+
+1. In your Supabase dashboard, go to "Authentication" → "Providers"
+2. Enable Google provider
+3. Paste your Google Client ID and Client Secret
+4. Add redirect URLs that match your application:
+   - Development: `http://localhost:5173`
+   - Production: `https://yourdomain.com`
+
+### 4. Environment Variables
+
+Copy `.env.example` to `.env` and fill in your Supabase credentials:
+
+```bash
+# Supabase Configuration
+VITE_SUPABASE_URL=your_supabase_project_url_here
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+```
+
+You can find these values in your Supabase project dashboard under "Settings" → "API".
+
+### 5. Test Authentication
+
+1. Start the development server: `npm run dev`
+2. Navigate to `/login` or click "Sign In" in the header
+3. Click "Continue with Google" to test the authentication flow
+
+### Authentication Features
+
+- ✅ Google OAuth integration
+- ✅ Secure session management
+- ✅ Automatic token refresh
+- ✅ Protected routes (ready for implementation)
+- ✅ User profile display
+- ✅ Sign out functionality
+
 ## Contributing
 
 1. Fork the repository
