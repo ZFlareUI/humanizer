@@ -3,9 +3,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
-// ============================================
-// AI PATTERN DETECTION ENGINE
-// ============================================
 
 function analyzeAIPatterns(text) {
   const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
