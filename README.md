@@ -453,12 +453,12 @@ You can find these values in your Supabase project dashboard under "Settings" �
 
 ### Authentication Features
 
-- ✅ Google OAuth integration
-- ✅ Secure session management
-- ✅ Automatic token refresh
-- ✅ Protected routes (ready for implementation)
-- ✅ User profile display
-- ✅ Sign out functionality
+-  Google OAuth integration
+-  Secure session management
+-  Automatic token refresh
+-  Protected routes (ready for implementation)
+-  User profile display
+-  Sign out functionality
 
 ## Contributing
 
